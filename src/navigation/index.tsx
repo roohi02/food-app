@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import RecipeDetailScreen from "../screens/RecipeDetailsScreen";
 import AIChatScreen from "../screens/AIChatScreen";
+import OrderScreen from "../screens/OrderFoodScreen";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function Navigation() {
@@ -18,6 +19,7 @@ export default function Navigation() {
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
         <Stack.Screen name="AIChat" component={AIChatScreen} />
+        <Stack.Screen name="OrderScreen" component={OrderScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -77,7 +77,7 @@ export default function FloatingAIBtn({ onPress }: Props) {
             elevation: 10,
           }}
         >
-          <Ionicons name="sparkles" size={24} color="white" />
+          <Ionicons name="chatbubble-ellipses" size={24} color="white" />
         </Animated.View>
       </Pressable>
     </Animated.View>

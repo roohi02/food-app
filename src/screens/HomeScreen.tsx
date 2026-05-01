@@ -105,19 +105,6 @@ export default function HomeScreen({ navigation }: Props) {
   // =========================
   const scale = useRef(new Animated.Value(1)).current;
 
-  const onPressIn = () => {
-    Animated.spring(scale, {
-      toValue: 0.96,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  const onPressOut = () => {
-    Animated.spring(scale, {
-      toValue: 1,
-      useNativeDriver: true,
-    }).start();
-  };
   return (
     <View className="flex-1 bg-white px-4 pt-10">
       {/* HEADER */}
@@ -127,11 +114,51 @@ export default function HomeScreen({ navigation }: Props) {
         What food is on your mind today?
       </Text>
 
-      <Text className="text-2xl font-bold mt-4 mb-4">Discover Recipes 🍽️</Text>
+      <Text className="text-2xl font-bold mt-4 mb-3">Discover 🍽️</Text>
+
+      <View style={{ flexDirection: "row", marginBottom: 12 }}>
+        {/* RECIPES CARD */}
+        <Pressable
+          onPress={() => navigation.navigate("AIChat")}
+          style={{
+            flex: 1,
+            backgroundColor: "#f97316",
+            padding: 16,
+            borderRadius: 16,
+            marginRight: 8,
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>
+            🍳 Recipes
+          </Text>
+          <Text style={{ color: "white", fontSize: 12, marginTop: 4 }}>
+            Cook from ingredients
+          </Text>
+        </Pressable>
+
+        {/* ORDER FOOD CARD */}
+        <Pressable
+          onPress={() => navigation.navigate("OrderScreen")}
+          style={{
+            flex: 1,
+            backgroundColor: "#111827",
+            padding: 16,
+            borderRadius: 16,
+            marginLeft: 8,
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 16, fontWeight: "700" }}>
+            🍔 Order
+          </Text>
+          <Text style={{ color: "white", fontSize: 12, marginTop: 4 }}>
+            Nearby restaurants
+          </Text>
+        </Pressable>
+      </View>
 
       {/* SEARCH */}
       <TextInput
-        placeholder="Search recipes..."
+        placeholder="Search dishes (pizza, pasta, biryani...)"
         value={query}
         onChangeText={setQuery}
         className="bg-gray-100 p-3 rounded-xl"
